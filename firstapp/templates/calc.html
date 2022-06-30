@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% comment %}
+
+{% block extrastyles %}
+{{ block.super }}
+sdf
+{% endblock %}
+
+{% endcomment %}
+
+
+
+
+{% block title %}{{ btn_text }} - My Website{% endblock %}
+
+
+
+{% block content %}
+
+{% include 'includes/navbar.html' with cou=count c=34 %}
+
+<p>
+    <a href="{% url 'index_page' %}">Go Back</a>
+</p>
+
+
+<p>
+    {% if request.GET.num1 and request.GET.num2 %}
+    {{ ans }}
+    {% endif %}
+</p>
+
+
+<form action="">
+    <input type="text" name="num1">
+    <input type="text" name="num2">
+
+    <button type="submit">{{ btn_text }}</button>
+</form>
+{% endblock %}

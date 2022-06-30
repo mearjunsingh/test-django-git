@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}My calculator
+{% endblock %}
+
+{% block content %}
+
+
+<h1>What do you want to do today?</h1>
+
+<p>
+<ul>
+    <li><a href="{% url 'add_page' %}">Add</a></li>
+    <li><a href="{% url 'sub_page' %}">Sub</a></li>
+    <li><a href="{% url 'mul_page' %}">Mul</a></li>
+    <li><a href="{% url 'div_page' %}">Div</a></li>
+</ul>
+</p>
+{% endblock %}
+
+
+
+{% comment %}
+
+{% block extrascripts %}
+<script>
+    alert('hello world')
+</script>
+{% endblock %}
+
+{% endcomment %}
