@@ -1,11 +1,41 @@
 {% extends 'base.html' %}
 
+{% block extrastyles %}
+<style>
+    .container {
+            {% if post.thumbnail %}
+
+                background-image: url('{{ post.thumbnail.url }}');
+
+            {% endif %}
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 
 
 <div class="container mt-3">
 
+
     {{ post.title }}
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem impedit asperiores accusantium mollitia doloribus
+    ipsum dicta nemo rem, consequatur iusto, sunt sed laborum sint sequi ipsa praesentium temporibus id? Praesentium?
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem tenetur maiores debitis illum in sequi
+    laboriosam id natus iste corporis eos, adipisci perspiciatis illo non architecto sed aperiam esse.
+
+
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi explicabo unde exercitationem praesentium, ipsa
+    soluta quasi suscipit accusantium cumque tenetur quia, doloribus, nesciunt labore laboriosam at nemo a quas
+    veritatis.
+
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem possimus quibusdam perspiciatis aliquam tempore
+    unde hic asperiores ducimus, alias non dicta sapiente facere consectetur incidunt corporis adipisci, atque
+    molestias. Perferendis.
 
 </div>
 
