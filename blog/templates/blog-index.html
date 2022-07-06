@@ -4,6 +4,15 @@
 
 
 <div class="container mt-3">
+
+    {% if request.GET.query %}
+
+    <h1>
+        Search Results: <span class="text-danger">{{ request.GET.query }}</span>
+    </h1>
+
+    {% endif %}
+
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         {% for post in posts %}
@@ -21,10 +30,13 @@
 
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a href="{% url 'single_blog_page' post.id %}">
+                        <a href="{% url 'single_blog_page' post.slug %}">
                             {{ post.title }}
                         </a>
                     </h5>
+                    <p>
+                        {{ post.category.title }}
+                    </p>
                     <p class="card-text">{{ post.summary }}</p>
                 </div>
                 <div class="card-footer">
