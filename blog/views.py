@@ -7,6 +7,10 @@ from .models import Post
 def blog_index_page(request):
     posts = Post.objects.filter(is_published=True).order_by("-views")
 
+    cat = request.GET.get("cat")
+    if cat:
+        posts = posts.filter(category__slug=cat)
+
     form = SearchForm(request.GET or None)
     if form.is_valid():
         query = form.cleaned_data.get("query")

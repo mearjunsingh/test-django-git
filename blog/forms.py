@@ -9,6 +9,8 @@ class SearchForm(forms.Form):
             attrs={
                 "class": "form-control me-2",
                 "placeholder": "Search anything...",
+                "id": "custom_search_id",
             }
         ),
+        required=False,
     )

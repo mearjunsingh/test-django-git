@@ -13,10 +13,17 @@
 
     {% endif %}
 
+    {% if request.GET.cat %}
+
+    <h1>
+        Category Results: <span class="text-danger">{{ request.GET.cat }}</span>
+    </h1>
+
+    {% endif %}
+
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         {% for post in posts %}
-
 
         <div class="col">
             <div class="card h-100">
@@ -44,6 +51,10 @@
                 </div>
             </div>
         </div>
+
+        {% empty %}
+
+        <div class="alert alert-danger text-center my-5 h2">No Posts Found!</div>
 
         {% endfor %}
 
