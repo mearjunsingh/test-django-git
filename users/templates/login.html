@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ request.user.is_authenticated }}
+<form action="" method="post" novalidate>
+
+    {% csrf_token %}
+
+    {% include 'includes/form.html' with contact_form=form %}
+
+    <div class="my-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+
+</form>
+
+{% endblock %}

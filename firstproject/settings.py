@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "firstapp",
     "blog",
     "portfolio",
+    "users",
 ]
 
 MIDDLEWARE = [
