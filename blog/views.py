@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
 from .forms import SearchForm
 from .models import Post
 
 
+@login_required()
 def blog_index_page(request):
     posts = Post.objects.filter(is_published=True).order_by("-views")
 

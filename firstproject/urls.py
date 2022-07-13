@@ -22,7 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("calc/", include("firstapp.urls")),
     path("blog/", include("blog.urls")),
-    path("account/", include("users.urls")),
+    path("accounts/", include("users.urls")),
     path("", include("portfolio.urls")),
 ]
 

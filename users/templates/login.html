@@ -2,7 +2,12 @@
 
 {% block content %}
 
-{{ request.user.is_authenticated }}
+{% if request.user.is_authenticated %}
+
+<div class="alert alert-danger">You are already logged in.</div>
+
+{% else %}
+
 <form action="" method="post" novalidate>
 
     {% csrf_token %}
@@ -14,5 +19,7 @@
     </div>
 
 </form>
+
+{% endif %}
 
 {% endblock %}
